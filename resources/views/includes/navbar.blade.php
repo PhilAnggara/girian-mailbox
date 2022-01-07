@@ -18,7 +18,7 @@
   <div class="navbar-menu-wrapper d-flex align-items-top">
     <ul class="navbar-nav">
       <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-        <h1 class="welcome-text">Halo, <span class="text-black fw-bold">Aditya Manansang</span></h1>
+        <h1 class="welcome-text">Halo, <span class="text-black fw-bold">{{ auth()->user()->name }}</span></h1>
         <h3 class="welcome-sub-text">Selamat Datang di Aplikasi Mailbox Kecamatan Girian </h3>
       </li>
     </ul>
@@ -65,13 +65,13 @@
       <li class="nav-item dropdown d-lg-block user-dropdown">
         <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
           <img class="img-xs rounded-circle" src="{{ url('frontend/images/user.png') }}" style="object-fit: cover" alt="Profile image">
-          <span class="d-none d-lg-inline ms-2 h5 font-weight-semibold">Aditya Manansang</span>
+          <span class="d-none d-lg-inline ms-2 h5 font-weight-semibold">{{ auth()->user()->name }}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
           <div class="dropdown-header text-center">
             <img class="img-md rounded-circle" src="{{ url('frontend/images/user.png') }}" width="60px" height="60px" style="object-fit: cover" alt="Profile image">
-            <p class="mb-1 mt-3 font-weight-semibold">Aditya Manansang</p>
-            <p class="fw-light text-muted mb-0">adityamanansang@gmail.com</p>
+            <p class="mb-1 mt-3 font-weight-semibold">{{ auth()->user()->name }}</p>
+            <p class="fw-light text-muted mb-0">{{ auth()->user()->email }}</p>
           </div>
           <form action="{{ url('logout') }}" method="POST">
             @csrf
