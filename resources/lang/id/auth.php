@@ -12,7 +12,7 @@
 */
 
 return [
-    'failed'   => 'Identitas tersebut tidak cocok dengan data kami.',
+    'failed'   => 'Nama pengguna atau kata sandi salah.',
     'password' => 'Kata sandi yang dimasukkan salah.',
     'throttle' => 'Terlalu banyak upaya masuk. Silahkan coba lagi dalam :seconds detik.',
 ];

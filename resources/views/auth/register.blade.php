@@ -1,73 +1,82 @@
 @extends('layouts.auth')
-@section('title', 'Kecamatan Girian Mailbox - Masuk')
+@section('title', 'Kecamatan Girian Mailbox - Buat Akun')
 
 @section('content')
-<div class="row flex-grow">
-  <div class="col-lg-6 d-flex align-items-center justify-content-center">
-    <div class="auth-form-transparent text-left p-3">
-      <div class="brand-logo">
-        {{-- <img src="{{ url('frontend/images/logo.png') }}" alt="logo"> --}}
-        <h4 class="text-dark fw-bold">Girian-<span class="text-secondary">MailBox</span></h4>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-3">
+        <h2 class="heading-section font-weight-bold">Girian-<span class="text-secondary">MailBox</span></h2>
       </div>
-      <h4>Buat akun</h4>
-      <h6 class="fw-light">Isi form di bawaah ini untuk membuat akun</h6>
-      <form class="pt-3" action="" method="POST">
-        @csrf
-        <div class="form-group">
-          <label>Nama</label>
-          <div class="input-group">
-            <div class="input-group-prepend bg-transparent">
-              <span class="input-group-text bg-transparent border-right-0">
-                <i class="ti-user text-primary"></i>
-              </span>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-7 col-lg-5">
+        <div class="wrap">
+          <div class="login-wrap p-4 p-md-5">
+            <div class="d-flex">
+              <div class="w-100">
+                <h3 class="mb-4">Buat Akun</h3>
+              </div>
             </div>
-            <input id="name" type="text" class="form-control form-control-lg border-left-0" placeholder="Nama" name="name" value="{{ old('name') }}" required autofocus>
+            <form action="{{ route('register') }}" method="POST" class="signin-form">
+              @csrf
+              <div class="form-group mt-3">
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Nama Pegawai" autofocus required>
+                @error('name')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                @enderror
+              </div>
+              <div class="form-group mt-3">
+                <input type="number" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip') }}" placeholder="NIP (Tidak Wajib Diisi)" required>
+                @error('nip')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                @enderror
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Nama Pengguna" required>
+                @error('username')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                @enderror
+              </div>
+              <div class="form-group mt-3">
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Email" required>
+                @error('email')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                @enderror
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Kata Sandi" required>
+                {{-- <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span> --}}
+                @error('password')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                @enderror
+              </div>
+              <div class="form-group">
+                <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" placeholder="Konfirmasi Kata Sandi" required>
+                @error('password_confirmation')
+                  <div class="invalid-feedback">
+                    {{ $message }}
+                  </div>
+                @enderror
+              </div>
+              <div class="form-group">
+                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Daftar</button>
+              </div>
+            </form>
           </div>
         </div>
-        <div class="form-group">
-          <label>Email</label>
-          <div class="input-group">
-            <div class="input-group-prepend bg-transparent">
-              <span class="input-group-text bg-transparent border-right-0">
-                <i class="ti-email text-primary"></i>
-              </span>
-            </div>
-            <input id="email" type="email" class="form-control form-control-lg border-left-0" placeholder="Email" name="email" value="{{ old('email') }}" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <div class="input-group">
-            <div class="input-group-prepend bg-transparent">
-              <span class="input-group-text bg-transparent border-right-0">
-                <i class="ti-lock text-primary"></i>
-              </span>
-            </div>
-            <input id="password" type="password" class="form-control form-control-lg border-left-0" placeholder="Password" name="password" required>                        
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Konfirmasi Password</label>
-          <div class="input-group">
-            <div class="input-group-prepend bg-transparent">
-              <span class="input-group-text bg-transparent border-right-0">
-                <i class="ti-lock text-primary"></i>
-              </span>
-            </div>
-            <input id="password-confirm" type="password" class="form-control form-control-lg border-left-0" placeholder="Konfirmasi Password" name="password_confirmation" required>                        
-          </div>
-        </div>
-        <div class="mt-3">
-          <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Daftar</button>
-        </div>
-        <div class="text-center mt-4 fw-light">
-          Sudah punya akun? <a href="{{ route('login') }}" class="text-primary">Masuk</a>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
-  <div class="col-lg-6 register-half-bg d-flex flex-row">
-    <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2021  All rights reserved.</p>
-  </div>
-</div>
+</section>
 @endsection
