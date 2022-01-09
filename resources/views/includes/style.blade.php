@@ -8,4 +8,7 @@
 <link rel="stylesheet" href="{{ url('frontend/assets/vendors/typicons/typicons.css') }}">
 <link rel="stylesheet" href="{{ url('frontend/assets/vendors/simple-line-icons/css/simple-line-icons.css') }}">
 <link rel="stylesheet" href="{{ url('frontend/assets/vendors/css/vendor.bundle.base.css') }}">
+
+<link rel="stylesheet" href="{{ url('frontend/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
+
 <link rel="stylesheet" href="{{ url('frontend/assets/css/vertical-layout-light/style.css') }}">

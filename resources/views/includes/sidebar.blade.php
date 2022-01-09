@@ -7,7 +7,7 @@
       </a>
     </li>
     <li class="nav-item {{ Request::is('surat-masuk') ? 'active' : '' }}">
-      <a class="nav-link" href="{{ route('home') }}">
+      <a class="nav-link" href="{{ route('surat-masuk.index') }}">
         <i class="far fa-inbox-in menu-icon"></i>
         <span class="menu-title">Daftar Surat Masuk</span>
       </a>

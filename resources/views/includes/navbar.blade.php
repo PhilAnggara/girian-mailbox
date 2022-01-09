@@ -76,7 +76,7 @@
           <form action="{{ url('logout') }}" method="POST">
             @csrf
             <button class="dropdown-item" type="submit">
-              <i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>
+              <i class="dropdown-item-icon mdi mdi-power text-danger me-2"></i>
               Keluar
             </button>
           </form>
