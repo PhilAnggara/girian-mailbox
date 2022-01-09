@@ -13,10 +13,10 @@
 
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Daftar Surat Masuk</h4>
+      <h4 class="card-title">Daftar Surat Keluar</h4>
       @livewire('surat-table', ['type' => $type])
     </div>
   </div>
 </div>
-@include('includes.modals.modal-surat-masuk')
+@include('includes.modals.modal-surat-keluar')
 @endsection

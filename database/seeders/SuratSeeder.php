@@ -42,7 +42,7 @@ class SuratSeeder extends Seeder
             'penerima' => 'Kel. Girian Atas',
         ]);
         SuratKeluar::create([
-            'nomor_surat' => 'SM-101221002',
+            'nomor_surat' => 'SK-101221002',
             'surat' => 'files/examples/sample-3.pdf',
             'judul_surat' => 'Surat Jadwal Kebersihan',
             'tanggal_masuk' => Carbon::parse('2021-12-10'),

@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SuratRequest;
-use App\Models\SuratMasuk;
+use App\Models\SuratKeluar;
 use Illuminate\Http\Request;
 
-class SuratMasukController extends Controller
+class SuratKeluarController extends Controller
 {
     
     public function index()
     {
-        $items = SuratMasuk::all()->sortDesc();
-        $type = 'surat-masuk';
+        $items = SuratKeluar::all()->sortDesc();
+        $type = 'surat-keluar';
 
-        return view('pages.surat-masuk', [
+        return view('pages.surat-keluar', [
             'items' => $items,
             'type' => $type
         ]);
@@ -28,7 +28,7 @@ class SuratMasukController extends Controller
     public function store(SuratRequest $request)
     {
         $data = $request->all();
-        $data['nomor_surat'] = $this->nomorSurat('SM', $data['tanggal_masuk'], SuratMasuk::all());
+        $data['nomor_surat'] = $this->nomorSurat('SM', $data['tanggal_masuk'], SuratKeluar::all());
 
         $nama_file = $data['nomor_surat'];
 
@@ -36,7 +36,7 @@ class SuratMasukController extends Controller
             'files/surat', $nama_file, 'public'
         );
 
-        SuratMasuk::create($data);
+        SuratKeluar::create($data);
         return redirect()->back()->with('success', 'Data berhasil ditambahkan.');
     }
     
@@ -63,14 +63,14 @@ class SuratMasukController extends Controller
             );
         }
 
-        SuratMasuk::find($id)->update($data);
+        SuratKeluar::find($id)->update($data);
 
         return redirect()->back()->with('success', 'Data berhasil diubah.');
     }
 
     public function destroy($id)
     {
-        $item = SuratMasuk::find($id);
+        $item = SuratKeluar::find($id);
         $item->delete();
 
         return redirect()->back()->with('success', 'Data berhasil dihapus.');
