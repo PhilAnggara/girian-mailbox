@@ -20,7 +20,6 @@ class UserSeeder extends Seeder
             'nip' => '3274298343204823039480',
             'username' => 'adityamanansang',
             'email' => 'adityamanansang@gmail.com',
-            // 'profile_pic' => '',
             'jabatan' => 'Camat',
             'password' => Hash::make('Admin123')
         ]);
