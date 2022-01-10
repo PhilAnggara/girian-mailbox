@@ -65,13 +65,14 @@
       <li class="nav-item dropdown d-lg-block user-dropdown">
         <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
           <img class="img-xs rounded-circle" src="{{ url('frontend/images/user.png') }}" style="object-fit: cover" alt="Profile image">
-          <span class="d-none d-lg-inline ms-2 h5 font-weight-semibold">{{ auth()->user()->name }}</span>
+          {{-- <span class="d-none d-lg-inline ms-2 h5 font-weight-semibold">{{ auth()->user()->name }}</span> --}}
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
           <div class="dropdown-header text-center">
             <img class="img-md rounded-circle" src="{{ url('frontend/images/user.png') }}" width="60px" height="60px" style="object-fit: cover" alt="Profile image">
-            <p class="mb-1 mt-3 font-weight-semibold">{{ auth()->user()->name }}</p>
+            <p class="fw-bold mb-1 mt-3 font-weight-semibold">{{ auth()->user()->name }}</p>
             <p class="fw-light text-muted mb-0">{{ auth()->user()->email }}</p>
+            <div class="badge badge-primary badge-pill">{{ auth()->user()->jabatan }}</div>
           </div>
           <form action="{{ url('logout') }}" method="POST">
             @csrf

@@ -50,6 +50,7 @@
                 <button type="submit" class="form-control btn btn-primary rounded submit px-3">Masuk</button>
               </div>
             </form>
+            <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Daftar</a></p>
           </div>
         </div>
       </div>

@@ -24,11 +24,11 @@
         <span class="menu-title">Buat Surat</span>
       </a>
     </li>
-    <li class="nav-item {{ Request::is('laporan') ? 'active' : '' }}">
+    {{-- <li class="nav-item {{ Request::is('laporan') ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('home') }}">
         <i class="far fa-clipboard-list menu-icon"></i>
         <span class="menu-title">Laporan</span>
       </a>
-    </li>
+    </li> --}}
   </ul>
 </nav>

@@ -73,6 +73,7 @@
                 <button type="submit" class="form-control btn btn-primary rounded submit px-3">Daftar</button>
               </div>
             </form>
+            <p class="text-center">Sudah punya akun? <a href="{{ route('login') }}">Masuk</a></p>
           </div>
         </div>
       </div>
