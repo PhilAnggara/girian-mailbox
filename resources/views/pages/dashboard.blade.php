@@ -3,6 +3,14 @@
 
 @section('content')
 <div class="content-wrapper">
+  
+  @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Sukses!</strong> {{ session('success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  @endif
+
   <div class="row mt-0 mt-md-5">
     <div class="col-md-4 grid-margin">
       <div class="card d-flex align-items-center">
@@ -58,18 +66,21 @@
     </div> --}}
   </div>
 
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Cetak Laporan</h5>
-      <form action="{{ route('cetak-pdf') }}" target="_blank" method="post">
-        @csrf
-        <div class="input-group mb-3">
-          <span class="input-group-text px-2 px-md-5">Pilih Bulan</span>
-          <input type="month" name="bulan" class="form-control" required>
-          <button class="btn btn-sm btn-success px-2 px-md-5" type="submit">Cetak</button>
-        </div>
-      </form>
+  @if (auth()->user()->jabatan == 'Admin')
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Cetak Laporan</h5>
+        <form action="{{ route('cetak-pdf') }}" target="_blank" method="post">
+          @csrf
+          <div class="input-group mb-3">
+            <span class="input-group-text px-2 px-md-5">Pilih Bulan</span>
+            <input type="month" name="bulan" class="form-control" required>
+            <button class="btn btn-sm btn-success px-2 px-md-5" type="submit">Cetak</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  @endif
+
 </div>
 @endsection

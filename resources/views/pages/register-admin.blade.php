@@ -15,10 +15,10 @@
           <div class="login-wrap p-4 p-md-5">
             <div class="d-flex">
               <div class="w-100">
-                <h3 class="mb-4">Buat Akun</h3>
+                <h3 class="mb-4">Buat Akun Admin</h3>
               </div>
             </div>
-            <form action="{{ route('register') }}" method="POST" class="signin-form">
+            <form action="{{ route('daftar-admin.store') }}" method="POST" class="signin-form">
               @csrf
               <div class="form-group mt-3">
                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Nama Pegawai" autofocus required>
@@ -73,7 +73,7 @@
                 <button type="submit" class="form-control btn btn-primary rounded submit px-3">Daftar</button>
               </div>
             </form>
-            <p class="text-center">Sudah punya akun? <a href="{{ route('login') }}">Masuk</a></p>
+            <p class="text-center"><a href="{{ route('home') }}">Kembali</a></p>
           </div>
         </div>
       </div>

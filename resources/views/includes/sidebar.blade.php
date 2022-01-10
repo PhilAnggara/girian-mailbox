@@ -30,5 +30,13 @@
         <span class="menu-title">Laporan</span>
       </a>
     </li> --}}
+    @if (auth()->user()->jabatan == 'Camat')
+      <li class="nav-item {{ Request::is('daftar-admin') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('daftar-admin.index') }}">
+          <i class="far fa-user-plus menu-icon"></i>
+          <span class="menu-title">Daftarkan Admin</span>
+        </a>
+      </li>
+    @endif
   </ul>
 </nav>

@@ -1,10 +1,12 @@
 <div>
   <div class="row">
-    <div class="col-12 col-md-8 text-center text-md-start">
-      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalTambah">
-        Tambah Surat
-      </button>
-    </div>
+    @if (auth()->user()->jabatan == 'Admin')
+      <div class="col-12 col-md-8 text-center text-md-start">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalTambah">
+          Tambah Surat
+        </button>
+      </div>
+    @endif
     <div class="col-12 col-md-4 mt-2 mt-md-0">
       <input wire:model="search" class="form-control form-control-lg" type="search" placeholder="Cari..." autofocus>
     </div>
@@ -20,7 +22,9 @@
               <th>Tanggal Masuk</th>
               <th>Pengirim</th>
               <th>Penerima</th>
-              <th>Aksi</th>
+              @if (auth()->user()->jabatan == 'Admin')
+                <th>Aksi</th>
+              @endif
             </tr>
           </thead>
           <tbody>
@@ -36,12 +40,14 @@
                 <td>{{ Carbon\Carbon::parse($item->tanggal_masuk)->isoFormat('D MMM YYYY') }}</td>
                 <td>{{ $item->pengirim }}</td>
                 <td>{{ $item->penerima }}</td>
-                <td>
-                  <div class="btn-group" role="group">
-                    <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#modalEdit-{{ $item->id }}">Ubah</button>
-                    <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus-{{ $item->id }}">Hapus</button>
-                  </div>
-                </td>
+                @if (auth()->user()->jabatan == 'Admin')
+                  <td>
+                    <div class="btn-group" role="group">
+                      <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#modalEdit-{{ $item->id }}">Ubah</button>
+                      <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus-{{ $item->id }}">Hapus</button>
+                    </div>
+                  </td>
+                @endif
               </tr>
             @empty
             <tr>
