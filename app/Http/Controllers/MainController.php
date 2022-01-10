@@ -6,6 +6,7 @@ use App\Models\SuratKeluar;
 use App\Models\SuratMasuk;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class MainController extends Controller
 {
@@ -31,6 +32,19 @@ class MainController extends Controller
         $sm = SuratMasuk::whereYear('tanggal_masuk', $tahun)->whereMonth('tanggal_masuk', $bulan)->get();
         $sk = SuratKeluar::whereYear('tanggal_masuk', $tahun)->whereMonth('tanggal_masuk', $bulan)->get();
 
-        return response()->json(['input' => [$bulan,$tahun], 'surat masuk' => $sm, 'surat keluar' => $sk]);
+        // return response()->json(['input' => [$bulan,$tahun], 'surat masuk' => $sm, 'surat keluar' => $sk]);
+
+        $tanggal = Carbon::parse($input)->isoFormat('MMMM YYYY');
+        $judul = 'Laporan Arsip Surat - '. $tanggal .'.pdf';
+
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pages.laporan', [
+            'sm' => $sm,
+            'sk' => $sk,
+            'tanggal' => $tanggal,
+        ]);
+
+        // return view('pages.cetak', compact('kendaraan','elektronik','furnitur'));
+        return $pdf->stream($judul);
     }
 }

@@ -61,7 +61,7 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Cetak Laporan</h5>
-      <form action="{{ route('cetak-pdf') }}" method="post">
+      <form action="{{ route('cetak-pdf') }}" target="_blank" method="post">
         @csrf
         <div class="input-group mb-3">
           <span class="input-group-text px-2 px-md-5">Pilih Bulan</span>
