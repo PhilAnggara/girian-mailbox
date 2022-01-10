@@ -1,5 +1,5 @@
 @extends('layouts.pdf')
-@section('title', 'Kecamatan Girian Mailbox')
+@section('title', $judul)
 
 @section('content')
 <h1 class="mb">LAPORAN ARSIP SURAT</h1>

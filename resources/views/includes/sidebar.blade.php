@@ -19,7 +19,7 @@
       </a>
     </li>
     <li class="nav-item {{ Request::is('buat-surat') ? 'active' : '' }}">
-      <a class="nav-link" href="{{ route('home') }}">
+      <a class="nav-link" href="{{ route('buat-surat') }}">
         <i class="far fa-envelope menu-icon"></i>
         <span class="menu-title">Buat Surat</span>
       </a>

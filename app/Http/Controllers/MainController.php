@@ -38,13 +38,50 @@ class MainController extends Controller
         $judul = 'Laporan Arsip Surat - '. $tanggal .'.pdf';
 
         $pdf = App::make('dompdf.wrapper');
-        $pdf->loadView('pages.laporan', [
+        $pdf->loadView('pages.pdf.laporan', [
+            'judul' => $judul,
             'sm' => $sm,
             'sk' => $sk,
             'tanggal' => $tanggal,
         ]);
 
-        // return view('pages.cetak', compact('kendaraan','elektronik','furnitur'));
+        return $pdf->stream($judul);
+    }
+
+    public function buatSurat()
+    {
+        return view('pages.buat-surat');
+    }
+    
+    public function cetakSurat(Request $request, $template)
+    {
+        $pdf = App::make('dompdf.wrapper');
+
+        if ($template == 'surat-keterangan-pindah')
+        {   
+            $judul = 'Surat Keterangan Pindah - '. $request->nama_lengkap .'.pdf';
+            $pdf->loadView('pages.pdf.surat-keterangan-pindah', [
+                'judul' => $judul,
+                'data' => $request
+            ]);
+        }
+        elseif ($template == 'surat-keterangan-untuk-menikah')
+        {
+            $judul = 'Surat Keterangan Untuk Menikah - '. $request->nama_lengkap .'.pdf';
+            $pdf->loadView('pages.pdf.surat-keterangan-untuk-menikah', [
+                'judul' => $judul,
+                'data' => $request
+            ]);
+        }
+        else
+        {
+            $judul = 'Surat Promosi Jabatan - '. $request->nama_lengkap .'.pdf';
+            $pdf->loadView('pages.pdf.surat-promosi-jabatan', [
+                'judul' => $judul,
+                'data' => $request
+            ]);
+        }
+        
         return $pdf->stream($judul);
     }
 }
