@@ -57,26 +57,42 @@ class MainController extends Controller
     {
         $pdf = App::make('dompdf.wrapper');
 
-        if ($template == 'surat-keterangan-pindah')
+        if ($template == 'surat-keterangan-izin-keramaian')
         {   
-            $judul = 'Surat Keterangan Pindah - '. $request->nama_lengkap .'.pdf';
-            $pdf->loadView('pages.pdf.surat-keterangan-pindah', [
+            $judul = 'Surat Keterangan Izin Keramaian - '. $request->nama_lengkap .'.pdf';
+            $pdf->loadView('pages.pdf.surat-keterangan-izin-keramaian', [
                 'judul' => $judul,
                 'data' => $request
             ]);
         }
-        elseif ($template == 'surat-keterangan-untuk-menikah')
+        elseif ($template == 'surat-keterangan-izin-bangunan')
         {
-            $judul = 'Surat Keterangan Untuk Menikah - '. $request->nama_lengkap .'.pdf';
-            $pdf->loadView('pages.pdf.surat-keterangan-untuk-menikah', [
+            $judul = 'Surat Keterangan Izin Bangunan - '. $request->nama_lengkap .'.pdf';
+            $pdf->loadView('pages.pdf.surat-keterangan-izin-bangunan', [
+                'judul' => $judul,
+                'data' => $request
+            ]);
+        }
+        elseif ($template == 'surat-keterangan-untuk-nikah')
+        {
+            $judul = 'Surat Keterangan Untuk Nikah - '. $request->nama_lengkap .'.pdf';
+            $pdf->loadView('pages.pdf.surat-keterangan-untuk-nikah', [
+                'judul' => $judul,
+                'data' => $request
+            ]);
+        }
+        elseif ($template == 'surat-pengantar-pindah')
+        {
+            $judul = 'Surat Pengantar Pindah - '. $request->nama_lengkap .'.pdf';
+            $pdf->loadView('pages.pdf.surat-pengantar-pindah', [
                 'judul' => $judul,
                 'data' => $request
             ]);
         }
         else
         {
-            $judul = 'Surat Promosi Jabatan - '. $request->nama_lengkap .'.pdf';
-            $pdf->loadView('pages.pdf.surat-promosi-jabatan', [
+            $judul = 'Surat Izin Tempat Usaha - '. $request->nama_lengkap .'.pdf';
+            $pdf->loadView('pages.pdf.surat-izin-tempat-usaha', [
                 'judul' => $judul,
                 'data' => $request
             ]);

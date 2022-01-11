@@ -6,8 +6,8 @@ use Livewire\Component;
 
 class TemplateSurat extends Component
 {
-    public $template;
-    public $jenis_kelamin;
+    public $template = '';
+    public $jk;
 
     public function render()
     {
