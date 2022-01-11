@@ -18,12 +18,14 @@
         <span class="menu-title">Daftar Surat Keluar</span>
       </a>
     </li>
-    <li class="nav-item {{ Request::is('buat-surat') ? 'active' : '' }}">
-      <a class="nav-link" href="{{ route('buat-surat') }}">
-        <i class="far fa-envelope menu-icon"></i>
-        <span class="menu-title">Buat Surat</span>
-      </a>
-    </li>
+    @if (auth()->user()->jabatan == 'Admin')
+      <li class="nav-item {{ Request::is('buat-surat') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('buat-surat') }}">
+          <i class="far fa-envelope menu-icon"></i>
+          <span class="menu-title">Buat Surat</span>
+        </a>
+      </li>
+    @endif
     {{-- <li class="nav-item {{ Request::is('laporan') ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('home') }}">
         <i class="far fa-clipboard-list menu-icon"></i>
