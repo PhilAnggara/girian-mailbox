@@ -7,10 +7,10 @@
   @include('includes.header-surat')
 
   <p style="margin-bottom:15pt; text-align:center; line-height:22.1pt"><span
-      style="font-family:'Times New Roman'; font-size:14pt; font-weight:bold; color:#222222">SURAT KETERANGAN UNTUK
+      style="font-family:'Times New Roman'; font-size:14pt; font-weight:bold; color:#222222">SURAT PENGANTAR UNTUK
       NIKAH</span><br /><span
       style="font-family:'Times New Roman'; font-size:12pt; font-weight:bold; color:#222222">Nomor :
-      15.028/KEC-GIRIAN/XI/2021</span></p>
+      {{ $data->nomor }}</span></p>
   <p style="line-height:200%; font-size:12pt"><span style="color:#222222">Yang bertanda tangan di bawah ini
       menerangkan dengan sesungguhnya bahwa:</span></p>
   <table cellspacing="0" cellpadding="0" class="TableGrid" style="margin-bottom:0pt; border-collapse:collapse">
@@ -22,7 +22,7 @@
         <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
       </td>
       <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Aditya Manansang (Adit)</span></p>
+        <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->nama }}</span></p>
       </td>
     </tr>
     <tr>
@@ -33,7 +33,7 @@
         <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
       </td>
       <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Pria</span></p>
+        <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->jenis_kelamin }}</span></p>
       </td>
     </tr>
     <tr>
@@ -44,7 +44,7 @@
         <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
       </td>
       <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Bitung 21 September 1999</span></p>
+        <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->tempat }}, {{ Carbon\Carbon::parse($data->tanggal_lahir )->isoFormat('D MMMM Y') }}</span></p>
       </td>
     </tr>
     <tr>
@@ -55,7 +55,7 @@
         <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
       </td>
       <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Indonesia</span></p>
+        <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->warga_negara }}</span></p>
       </td>
     </tr>
     <tr>
@@ -66,7 +66,7 @@
         <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
       </td>
       <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Islam</span></p>
+        <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->agama }}</span></p>
       </td>
     </tr>
     <tr>
@@ -77,7 +77,7 @@
         <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
       </td>
       <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Pengusaha</span></p>
+        <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->pekerjaan }}</span></p>
       </td>
     </tr>
     <tr>
@@ -88,7 +88,7 @@
         <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
       </td>
       <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Girian Atas</span></p>
+        <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->tempat_tinggal }}</span></p>
       </td>
     </tr>
     <tr>
@@ -99,7 +99,7 @@
         <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
       </td>
       <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Lonna Eddi Manansang</span></p>
+        <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->bin }}</span></p>
       </td>
     </tr>
     <tr>
@@ -110,20 +110,22 @@
         <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
       </td>
       <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Jejaka</span></p>
+        <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->status_perkawinan }}</span></p>
       </td>
     </tr>
-    <tr style="height:20.65pt">
-      <td style="width:139.7pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">Nama suami/istri terdahulu</span></p>
-      </td>
-      <td style="width:32.2pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
-      </td>
-      <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:15pt; line-height:200%"><span style="color:#222222">Belum menikah</span></p>
-      </td>
-    </tr>
+    @if ($data->pasangan_terdahulu)
+      <tr style="height:20.65pt">
+        <td style="width:139.7pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
+          <p style="margin-bottom:15pt"><span style="color:#222222">Nama suami/istri terdahulu</span></p>
+        </td>
+        <td style="width:32.2pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
+          <p style="margin-bottom:15pt"><span style="color:#222222">:</span></p>
+        </td>
+        <td style="width:246.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
+          <p style="margin-bottom:15pt"><span style="color:#222222">{{ $data->pasangan_terdahulu }}</span></p>
+        </td>
+      </tr>
+    @endif
   </table>
   <p style="margin-bottom:15pt; line-height:115%; font-size:12pt"><span style="color:#222222">Demikian surat
       keterangan untuk menikah ini telah dibuat agar dapat digunakan seperlunya sesuai dengan fungsinya.</span></p>
@@ -131,7 +133,7 @@
     style="width:454.25pt; margin-bottom:0pt; border-collapse:collapse">
     <tr style="height:20.65pt">
       <td style="width:137.45pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center"><span>Girian, 23 November 2021</span></p>
+        <p style="margin-bottom:0pt; text-align:center"><span>Girian, {{ Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</span></p>
       </td>
     </tr>
     <tr style="height:22pt">

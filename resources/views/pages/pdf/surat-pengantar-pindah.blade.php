@@ -10,8 +10,7 @@
       style="font-weight:bold">SURAT PENGANTAR PINDAH</span></p>
   <p style="margin-bottom:0pt; text-align:center; line-height:normal; font-size:12pt"><span
       style="font-weight:bold">ANTAR KABUPATEN/KOTA ATAU ANTAR PROVINSI</span></p>
-  <p style="margin-bottom:0pt; text-align:center; line-height:150%; font-size:12pt"><span>Nomor :
-      15.001/KEC-GIRIAN/III/2021</span></p>
+  <p style="margin-bottom:0pt; text-align:center; line-height:150%; font-size:12pt"><span>Nomor : {{ $data->nomor }}</span></p>
   <p style="margin-bottom:0pt; text-indent:36pt; line-height:normal; font-size:12pt"><span>Yang bertanda tangan di
       bawah ini, menerangkan Permohonan Pindah Penduduk</span></p>
   <p style="margin-bottom:0pt; line-height:150%; font-size:12pt"><span>WNI dengan data sebagai berikut :</span></p>
@@ -27,7 +26,7 @@
         <p style="margin-bottom:0pt; line-height:150%"><span>:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:150%"><span>7172052109990002</span></p>
+        <p style="margin-bottom:0pt; line-height:150%"><span>{{ $data->nik }}</span></p>
       </td>
     </tr>
     <tr>
@@ -41,7 +40,7 @@
         <p style="margin-bottom:0pt; line-height:150%"><span>:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:150%"><span>Aditya Manansang</span></p>
+        <p style="margin-bottom:0pt; line-height:150%"><span>{{ $data->nama }}</span></p>
       </td>
     </tr>
     <tr>
@@ -55,7 +54,7 @@
         <p style="margin-bottom:0pt; line-height:150%"><span>:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:150%"><span>7172050407070001</span></p>
+        <p style="margin-bottom:0pt; line-height:150%"><span>{{ $data->nkk }}</span></p>
       </td>
     </tr>
     <tr>
@@ -69,7 +68,7 @@
         <p style="margin-bottom:0pt; line-height:150%"><span>:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:150%"><span>Arthur Manansang</span></p>
+        <p style="margin-bottom:0pt; line-height:150%"><span>{{ $data->nama_kepala_keluarga }}</span></p>
       </td>
     </tr>
     <tr>
@@ -83,7 +82,7 @@
         <p style="margin-bottom:0pt; line-height:150%"><span>:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:150%"><span>Girian Atas</span></p>
+        <p style="margin-bottom:0pt; line-height:150%"><span>{{ $data->alamat_sekarang }}</span></p>
       </td>
     </tr>
     <tr>
@@ -97,7 +96,7 @@
         <p style="margin-bottom:0pt; line-height:150%"><span>:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:150%"><span>Manado</span></p>
+        <p style="margin-bottom:0pt; line-height:150%"><span>{{ $data->alamat_pindah }}</span></p>
       </td>
     </tr>
     <tr>
@@ -111,7 +110,7 @@
         <p style="margin-bottom:0pt; line-height:150%"><span>:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:150%"><span>4 Orang</span></p>
+        <p style="margin-bottom:0pt; line-height:150%"><span>{{ $data->jumlah_pengikut }} Orang</span></p>
       </td>
     </tr>
   </table>
@@ -125,7 +124,7 @@
     style="margin-left:319.25pt; margin-bottom:0pt; border-collapse:collapse">
     <tr>
       <td style="width:120.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center; line-height:150%"><span>Girian, 18 Maret 2021</span></p>
+        <p style="margin-bottom:0pt; text-align:center; line-height:150%"><span>Girian, {{ Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</span></p>
       </td>
     </tr>
     <tr>

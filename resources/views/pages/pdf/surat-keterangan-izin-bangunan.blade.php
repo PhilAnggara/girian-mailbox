@@ -8,8 +8,7 @@
 
   <p style="margin-bottom:0pt; text-align:center; line-height:108%; font-size:16pt"><span
       style="font-weight:bold">Surat Keterangan Izin Bangunan</span></p>
-  <p style="text-align:center; line-height:108%; font-size:12pt"><span style="font-weight:bold">Nomor :
-      09.002/KEC-GIRIAN/V/2021</span></p>
+  <p style="text-align:center; line-height:108%; font-size:12pt"><span style="font-weight:bold">Nomor : {{ $data->nomor }}</span></p>
   <p style="text-align:center; line-height:108%; font-size:12pt"><span
       style="font-weight:bold; -aw-import:ignore">&#xa0;</span></p>
   <p style="text-align:justify"><span>Yang bertanda tangan dibawah ini :</span></p>
@@ -22,7 +21,7 @@
         <p style="margin-bottom:0pt; font-size:11pt"><span>:</span></p>
       </td>
       <td style="width:224.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; font-size:11pt"><span>Aditya Manansang</span></p>
+        <p style="margin-bottom:0pt; font-size:11pt"><span>{{ $data->nama }}</span></p>
       </td>
     </tr>
     <tr>
@@ -33,7 +32,7 @@
         <p style="margin-bottom:0pt; font-size:11pt"><span>:</span></p>
       </td>
       <td style="width:224.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; font-size:11pt"><span>Pengusaha</span></p>
+        <p style="margin-bottom:0pt; font-size:11pt"><span>{{ $data->pekerjaan }}</span></p>
       </td>
     </tr>
     <tr>
@@ -44,7 +43,7 @@
         <p style="margin-bottom:0pt; font-size:11pt"><span>:</span></p>
       </td>
       <td style="width:224.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; font-size:11pt"><span>Girian Bawah</span></p>
+        <p style="margin-bottom:0pt; font-size:11pt"><span>{{ $data->alamat }}</span></p>
       </td>
     </tr>
   </table>
@@ -59,7 +58,7 @@
         <p style="margin-bottom:0pt; text-align:justify; font-size:11pt"><span>:</span></p>
       </td>
       <td style="width:224.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:justify; font-size:11pt"><span>Tanah Girian Bawah</span></p>
+        <p style="margin-bottom:0pt; text-align:justify; font-size:11pt"><span>{{ $data->terletak }}</span></p>
       </td>
     </tr>
     <tr>
@@ -70,7 +69,7 @@
         <p style="margin-bottom:0pt; text-align:justify; font-size:11pt"><span>:</span></p>
       </td>
       <td style="width:224.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:justify; font-size:11pt"><span>Milik Sendiri</span></p>
+        <p style="margin-bottom:0pt; text-align:justify; font-size:11pt"><span>{{ $data->status_tanah }}</span></p>
       </td>
     </tr>
   </table>
@@ -94,7 +93,7 @@
         <p style="margin-bottom:0pt; font-size:11pt"><span style="-aw-import:ignore">&#xa0;</span></p>
       </td>
       <td style="width:115.2pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center; font-size:11pt"><span>Girian, 5 Mei 2021</span></p>
+        <p style="margin-bottom:0pt; text-align:center; font-size:11pt"><span>Girian, {{ Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</span></p>
       </td>
     </tr>
     <tr style="height:22pt">
@@ -140,7 +139,7 @@
         <p style="margin-bottom:0pt; font-size:11pt"><span style="-aw-import:ignore">&#xa0;</span></p>
       </td>
       <td style="width:115.2pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center; font-size:11pt"><span>Aditya Manansang</span></p>
+        <p style="margin-bottom:0pt; text-align:center; font-size:11pt"><span>{{ $data->nomor }}</span></p>
       </td>
     </tr>
   </table>

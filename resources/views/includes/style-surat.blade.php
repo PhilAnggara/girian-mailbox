@@ -2,7 +2,8 @@
   body {
     line-height: 108%;
     font-family: Calibri;
-    font-size: 11pt
+    font-size: 11pt;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   h2,

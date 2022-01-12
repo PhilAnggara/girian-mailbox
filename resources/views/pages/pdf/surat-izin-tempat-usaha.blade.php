@@ -6,8 +6,7 @@
   
   @include('includes.header-surat')
 
-  <p style="margin-bottom:0pt; line-height:150%; font-size:12pt"><span style="background-color:#ffffff">Bitung, 4
-      Januari 2022</span></p>
+  <p style="margin-bottom:0pt; line-height:150%; font-size:12pt"><span style="background-color:#ffffff">Bitung, {{ Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</span></p>
   <table cellspacing="0" cellpadding="0" class="TableGrid" style="margin-bottom:0pt; border-collapse:collapse">
     <tr>
       <td style="width:60.95pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
@@ -17,7 +16,7 @@
         <p style="margin-bottom:0pt; line-height:150%; font-size:11pt"><span>:</span></p>
       </td>
       <td style="width:354.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:150%; font-size:11pt"><span>03.001/KEC-GIRIAN/I/2022</span></p>
+        <p style="margin-bottom:0pt; line-height:150%; font-size:11pt"><span>{{ $data->nomor }}</span></p>
       </td>
     </tr>
     <tr>
@@ -61,7 +60,7 @@
         <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">Aditya Manansang</span>
+        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">{{ $data->nama }}</span>
         </p>
       </td>
     </tr>
@@ -73,7 +72,7 @@
         <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">Girian Bawah</span></p>
+        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">{{ $data->alamat }}</span></p>
       </td>
     </tr>
     <tr>
@@ -84,7 +83,7 @@
         <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">:</span></p>
       </td>
       <td style="width:215.25pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">Pengusaha</span></p>
+        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">{{ $data->pekerjaan }}</span></p>
       </td>
     </tr>
   </table>
@@ -100,8 +99,7 @@
         <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">:</span></p>
       </td>
       <td style="width:219.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">Usaha
-            Perdangangan</span></p>
+        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">{{ $data->jenis_usaha }}</span></p>
       </td>
     </tr>
     <tr>
@@ -113,7 +111,7 @@
         <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">:</span></p>
       </td>
       <td style="width:219.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">CV. Pisang Goreng</span>
+        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">{{ $data->nama_peusahaan }}</span>
         </p>
       </td>
     </tr>
@@ -125,7 +123,7 @@
         <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">:</span></p>
       </td>
       <td style="width:219.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">Girian Bawah</span></p>
+        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">{{ $data->alamat_usaha }}</span></p>
       </td>
     </tr>
     <tr>
@@ -136,7 +134,7 @@
         <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">:</span></p>
       </td>
       <td style="width:219.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">Girian Bawah</span></p>
+        <p style="margin-bottom:0pt; line-height:115%"><span style="background-color:#ffffff">{{ $data->kelurahan }}</span></p>
       </td>
     </tr>
     <tr>
@@ -188,14 +186,14 @@
     </tr>
     <tr style="height:43.15pt">
       <td style="width:120.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center; line-height:115%"><span
+        <p style="margin-bottom:0pt; text-align:center; line-height:415%"><span
             style="-aw-import:ignore">&#xa0;</span></p>
       </td>
     </tr>
     <tr>
       <td style="width:120.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:center; line-height:115%"><span
-            style="background-color:#ffffff">Aditya Manansang</span></p>
+            style="background-color:#ffffff">{{ $data->nama }}</span></p>
       </td>
     </tr>
   </table>

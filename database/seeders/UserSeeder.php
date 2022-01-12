@@ -23,5 +23,13 @@ class UserSeeder extends Seeder
             'jabatan' => 'Camat',
             'password' => Hash::make('Admin123')
         ]);
+        User::create([
+            'name' => 'Arthur Manansang',
+            'nip' => '3274298343204823039480',
+            'username' => 'arthurmanansang',
+            'email' => 'arthurmanansang@gmail.com',
+            'jabatan' => 'Admin',
+            'password' => Hash::make('Admin123')
+        ]);
     }
 }

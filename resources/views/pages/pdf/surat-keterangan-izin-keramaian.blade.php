@@ -9,10 +9,10 @@
   <p style="margin-bottom:0pt; text-align:center; line-height:normal; font-size:16pt; background-color:#ffffff"><span
       style="font-weight:bold; letter-spacing:-0.75pt">Surat Keterangan Izin Keramaian</span></p>
   <p style="margin-bottom:0pt; text-align:center; line-height:150%; font-size:12pt; background-color:#ffffff"><span
-      style="font-weight:bold; letter-spacing:-0.75pt">Nomor : 09.005/KEC-GIRIAN/IX/2021</span></p>
+      style="font-weight:bold; letter-spacing:-0.75pt">Nomor : {{ $data->nomor }}</span></p>
   <p
     style="margin-bottom:0pt; text-indent:36pt; text-align:justify; line-height:150%; font-size:12pt; background-color:#ffffff">
-    <span style="letter-spacing:-0.75pt">Yang bertanda tangan di bawah ini Kepala Desa Brambang kecamatan Girian Kota
+    <span style="letter-spacing:-0.75pt">Yang bertanda tangan di bawah ini Camat Kecamatan Girian Kota
       Bitung, menerangkan dengan</span><span style="letter-spacing:-0.75pt; -aw-import:spaces">&#xa0; </span><span
       style="letter-spacing:-0.75pt">sebenarnya bahwa:</span></p>
   <table cellspacing="0" cellpadding="0" class="TableGrid" style="margin-bottom:0pt; border-collapse:collapse">
@@ -26,8 +26,7 @@
             style="letter-spacing:-0.75pt">:</span></p>
       </td>
       <td style="width:255.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span style="letter-spacing:-0.75pt">Aditya
-            Manansag</span></p>
+        <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span style="letter-spacing:-0.75pt">{{ $data->nama }}</span></p>
       </td>
     </tr>
     <tr>
@@ -41,7 +40,7 @@
       </td>
       <td style="width:255.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span
-            style="letter-spacing:-0.75pt">Bitung, 21 September 1999</span></p>
+            style="letter-spacing:-0.75pt">{{ $data->tempat }}, {{ Carbon\Carbon::parse($data->tanggal_lahir )->isoFormat('D MMMM Y') }}</span></p>
       </td>
     </tr>
     <tr>
@@ -55,7 +54,7 @@
       </td>
       <td style="width:255.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span
-            style="letter-spacing:-0.75pt">Pengusaha</span></p>
+            style="letter-spacing:-0.75pt">{{ $data->pekerjaan }}</span></p>
       </td>
     </tr>
     <tr>
@@ -68,8 +67,7 @@
             style="letter-spacing:-0.75pt">:</span></p>
       </td>
       <td style="width:255.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span style="letter-spacing:-0.75pt">Girian
-            Bawah</span></p>
+        <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span style="letter-spacing:-0.75pt">{{ $data->alamat }}</span></p>
       </td>
     </tr>
   </table>
@@ -91,7 +89,7 @@
       </td>
       <td style="width:255.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span
-            style="letter-spacing:-0.75pt">Sabtu</span></p>
+            style="letter-spacing:-0.75pt">{{ Carbon\Carbon::parse($data->tanggal_acara )->isoFormat('dddd') }}</span></p>
       </td>
     </tr>
     <tr>
@@ -104,8 +102,7 @@
             style="letter-spacing:-0.75pt">:</span></p>
       </td>
       <td style="width:255.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span style="letter-spacing:-0.75pt">18
-            September 2021</span></p>
+        <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span style="letter-spacing:-0.75pt">{{ Carbon\Carbon::parse($data->tanggal_acara )->isoFormat('D MMMM Y') }}</span></p>
       </td>
     </tr>
     <tr>
@@ -119,7 +116,7 @@
       </td>
       <td style="width:255.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span
-            style="letter-spacing:-0.75pt">Pernikahan</span></p>
+            style="letter-spacing:-0.75pt">{{ $data->jenis_acara }}</span></p>
       </td>
     </tr>
     <tr>
@@ -133,21 +130,20 @@
       </td>
       <td style="width:255.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span
-            style="letter-spacing:-0.75pt">Musik</span></p>
+            style="letter-spacing:-0.75pt">{{ $data->hiburan }}</span></p>
       </td>
     </tr>
     <tr>
       <td style="width:150.95pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span style="letter-spacing:-0.75pt">Tempat
-            Acara</span></p>
+            acara</span></p>
       </td>
       <td style="width:11.7pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span
             style="letter-spacing:-0.75pt">:</span></p>
       </td>
       <td style="width:255.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span style="letter-spacing:-0.75pt">Girian
-            Bawah</span></p>
+        <p style="margin-bottom:0pt; text-align:justify; line-height:150%"><span style="letter-spacing:-0.75pt">{{ $data->tempat_acara }}</span></p>
       </td>
     </tr>
   </table>
@@ -163,7 +159,7 @@
     <tr>
       <td style="width:120.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:center; line-height:150%"><span style="letter-spacing:-0.75pt">Girian,
-            14 September 2021</span></p>
+          {{ Carbon\Carbon::now()->isoFormat('D MMMM Y') }}</span></p>
       </td>
     </tr>
     <tr>
