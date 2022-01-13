@@ -71,7 +71,7 @@ class MainController extends Controller
         {
             $type = '09';
             $order = $this->getOrder($type);
-            $judul = 'Surat Keterangan Izin Keramaian - '. $request->nama_lengkap .'.pdf';
+            $judul = 'Surat Keterangan Izin Keramaian - '. $request->nama .'.pdf';
             $pdf->loadView('pages.pdf.surat-keterangan-izin-keramaian', [
                 'judul' => $judul,
                 'data' => $request
@@ -81,7 +81,7 @@ class MainController extends Controller
         {
             $type = '09';
             $order = $this->getOrder($type);
-            $judul = 'Surat Keterangan Izin Bangunan - '. $request->nama_lengkap .'.pdf';
+            $judul = 'Surat Keterangan Izin Bangunan - '. $request->nama .'.pdf';
             $pdf->loadView('pages.pdf.surat-keterangan-izin-bangunan', [
                 'judul' => $judul,
                 'data' => $request
@@ -91,7 +91,7 @@ class MainController extends Controller
         {
             $type = '15';
             $order = $this->getOrder($type);
-            $judul = 'Surat Pengantar Untuk Nikah - '. $request->nama_lengkap .'.pdf';
+            $judul = 'Surat Pengantar Untuk Nikah - '. $request->nama .'.pdf';
             $pdf->loadView('pages.pdf.surat-pengantar-untuk-nikah', [
                 'judul' => $judul,
                 'data' => $request
@@ -101,7 +101,7 @@ class MainController extends Controller
         {
             $type = '15';
             $order = $this->getOrder($type);
-            $judul = 'Surat Pengantar Pindah - '. $request->nama_lengkap .'.pdf';
+            $judul = 'Surat Pengantar Pindah - '. $request->nama .'.pdf';
             $pdf->loadView('pages.pdf.surat-pengantar-pindah', [
                 'judul' => $judul,
                 'data' => $request
@@ -111,7 +111,7 @@ class MainController extends Controller
         {
             $type = '03';
             $order = $this->getOrder($type);
-            $judul = 'Surat Izin Tempat Usaha - '. $request->nama_lengkap .'.pdf';
+            $judul = 'Surat Izin Tempat Usaha - '. $request->nama .'.pdf';
             $pdf->loadView('pages.pdf.surat-izin-tempat-usaha', [
                 'judul' => $judul,
                 'data' => $request

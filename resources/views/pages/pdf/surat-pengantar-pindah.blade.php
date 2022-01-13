@@ -142,7 +142,10 @@
     </tr>
     <tr style="height:28.3pt">
       <td style="width:120.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center; line-height:150%"><span>Muslih Antameng</span></p>
+        <p style="margin-bottom:0pt; text-align:center; line-height:150%">
+          <span>Muslih Antameng</span><br>
+          <span>NIP.197501181996032001</span>
+        </p>
       </td>
     </tr>
   </table>

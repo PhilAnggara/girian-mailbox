@@ -130,7 +130,10 @@
     </tr>
     <tr style="height:24.25pt">
       <td style="width:137.45pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center; font-size:11pt"><span>Muslih Antameng</span></p>
+        <p style="margin-bottom:0pt; text-align:center; font-size:11pt">
+          <span>Muslih Antameng</span><br>
+          <span>NIP.197501181996032001</span>
+        </p>
       </td>
       <td style="width:66.35pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; font-size:11pt"><span style="-aw-import:ignore">&#xa0;</span></p>
@@ -139,7 +142,7 @@
         <p style="margin-bottom:0pt; font-size:11pt"><span style="-aw-import:ignore">&#xa0;</span></p>
       </td>
       <td style="width:115.2pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center; font-size:11pt"><span>{{ $data->nomor }}</span></p>
+        <p style="margin-bottom:0pt; text-align:center; font-size:11pt"><span>{{ $data->nama }}</span></p>
       </td>
     </tr>
   </table>

@@ -181,19 +181,23 @@
     <tr>
       <td style="width:120.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
         <p style="margin-bottom:0pt; text-align:center; line-height:115%"><span
-            style="background-color:#ffffff">Pemohon</span></p>
+            style="background-color:#ffffff">Camat</span></p>
       </td>
     </tr>
     <tr style="height:43.15pt">
       <td style="width:120.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center; line-height:415%"><span
-            style="-aw-import:ignore">&#xa0;</span></p>
+        <p style="margin-bottom:0pt; text-align:center; line-height:150%"><img
+          src="{{ public_path('template-surat/images/Aspose.Words.93e957f2-1352-47fe-9206-1a540e63ab68.002.png') }}" width="139" height="102" alt=""
+          style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline" />
+        </p>
       </td>
     </tr>
     <tr>
       <td style="width:120.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-        <p style="margin-bottom:0pt; text-align:center; line-height:115%"><span
-            style="background-color:#ffffff">{{ $data->nama }}</span></p>
+        <p style="margin-bottom:0pt; text-align:center; line-height:115%">
+          <span style="background-color:#ffffff">Muslih Antameng</span><br>
+          <span style="background-color:#ffffff">NIP.197501181996032001</span>
+        </p>
       </td>
     </tr>
   </table>
