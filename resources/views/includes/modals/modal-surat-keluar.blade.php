@@ -29,8 +29,63 @@
           </div>
           
           <div class="form-group">
-            <label for="tanggal_masuk">Tanggal Masuk</label>
-            <input type="date" class="form-control" name="tanggal_masuk" id="tanggal_masuk" placeholder="Tanggal Masuk" required>
+            <label for="tanggal_masuk">Tanggal Keluar</label>
+            <input type="date" class="form-control" name="tanggal_masuk" id="tanggal_masuk" placeholder="Tanggal Keluar" required>
+          </div>
+
+          <div class="form-group">
+            <label for="pengirim">Pengirim</label>
+            <input type="text" class="form-control" name="pengirim" id="pengirim" placeholder="Pengirim" required>
+          </div>
+
+          <div class="form-group">
+            <label for="penerima">Penerima</label>
+            <input type="text" class="form-control" name="penerima" id="penerima" placeholder="Penerima" required>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-success">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{-- Modal Buat --}}
+<div class="modal fade" id="modalBuat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Buat Surat</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{ route('surat-keluar.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="modal-body py-4">
+
+          @if($errors->any())
+            @foreach ($errors->all() as $error)
+              <div class="alert alert-danger">{{ $error }}</div>
+            @endforeach
+          @endif
+
+          <div class="form-group">
+            <label for="isi_surat">Isi Surat</label>
+            <textarea name="isi_surat" id="isi_surat" rows="100"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="judul_surat">Judul Surat</label>
+            <input type="text" class="form-control" name="judul_surat" id="judul_surat" placeholder="Judul Surat" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="tanggal_masuk">Tanggal Keluar</label>
+            <input type="date" class="form-control" name="tanggal_masuk" id="tanggal_masuk" placeholder="Tanggal Keluar" required>
           </div>
 
           <div class="form-group">

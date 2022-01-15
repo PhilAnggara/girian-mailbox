@@ -5,6 +5,11 @@
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalTambah">
           Tambah Surat
         </button>
+        @if ($type == 'surat-keluar')
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalBuat">
+            Buat Surat
+          </button>
+        @endif
       </div>
     @endif
     <div class="col-12 col-md-4 mt-2 mt-md-0">

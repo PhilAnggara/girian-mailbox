@@ -26,7 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('buat-surat', [MainController::class, 'buatSurat'])->middleware('cek.jabatan:Admin')->name('buat-surat');
     Route::post('buat-surat/{template}', [MainController::class, 'cetakSurat'])->name('cetak-surat');
 
-    Route::resource('daftar-admin', UserController::class)->middleware('cek.jabatan:Camat');
+    Route::resource('daftar-admin', UserController::class)->middleware('cek.jabatan:Sekretaris Kecamatan');
     
     Route::resource('surat-masuk', SuratMasukController::class);
     Route::resource('surat-keluar', SuratKeluarController::class);

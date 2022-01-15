@@ -27,6 +27,7 @@ class SuratKeluarController extends Controller
     
     public function store(SuratRequest $request)
     {
+        dd($request->isi_surat);
         $data = $request->all();
         $data['nomor_surat'] = $this->nomorSurat('SM', $data['tanggal_masuk'], SuratKeluar::all());
 

@@ -20,3 +20,21 @@
 </div>
 @include('includes.modals.modal-surat-keluar')
 @endsection
+
+@push('addon-style')
+  <style>
+    .tox-tinymce {
+      height: 1000px !important;
+    }
+    .tox-statusbar__text-container {
+      display: none !important;
+    }
+  </style>
+
+  <script src="{{ url('frontend/vendors/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ url('frontend/vendors/tinymce/plugins/code/plugin.min.js') }}"></script>
+  <script>
+    tinymce.init({ selector: '#isi_surat' });
+    tinymce.init({ selector: '#dark', toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright bullist numlist outdent indent code', plugins: 'code' });
+  </script>
+@endpush
