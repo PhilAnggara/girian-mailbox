@@ -73,6 +73,8 @@
             @endforeach
           @endif
 
+          <input type="hidden" name="buat-baru" value="1">
+
           <div class="form-group">
             <label for="isi_surat">Isi Surat</label>
             <textarea name="isi_surat" id="isi_surat" rows="100"></textarea>

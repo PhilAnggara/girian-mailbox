@@ -35,12 +35,21 @@
           <tbody>
             @forelse ($items as $item)
               <tr>
-                <td>
-                  <a href="{{ Storage::url($item->surat) }}" class="btn btn-inverse-danger btn-icon btn-sm me-2" target="_blank">
-                    <i class="far fa-file-pdf"></i>
-                  </a>
-                  <a href="{{ Storage::url($item->surat) }}" class="text-secondary text-decoration-none" target="_blank"><b>{{ $item->nomor_surat }}</b></a>
-                </td>
+                @if ($item->isi_surat)
+                  <td>
+                    <a href="{{ route('surat-keluar.show', $item->id) }}" class="btn btn-inverse-danger btn-icon btn-sm me-2" target="_blank">
+                      <i class="far fa-file-pdf"></i>
+                    </a>
+                    <a href="{{ route('surat-keluar.show', $item->id) }}" class="text-secondary text-decoration-none" target="_blank"><b>{{ $item->nomor_surat }}</b></a>
+                  </td>
+                @else
+                  <td>
+                    <a href="{{ Storage::url($item->surat) }}" class="btn btn-inverse-danger btn-icon btn-sm me-2" target="_blank">
+                      <i class="far fa-file-pdf"></i>
+                    </a>
+                    <a href="{{ Storage::url($item->surat) }}" class="text-secondary text-decoration-none" target="_blank"><b>{{ $item->nomor_surat }}</b></a>
+                  </td>
+                @endif
                 <td>{{ $item->judul_surat }}</td>
                 <td>{{ Carbon\Carbon::parse($item->tanggal_masuk)->isoFormat('D MMM YYYY') }}</td>
                 <td>{{ $item->pengirim }}</td>

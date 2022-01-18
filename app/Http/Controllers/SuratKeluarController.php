@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SuratRequest;
 use App\Models\SuratKeluar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class SuratKeluarController extends Controller
 {
@@ -27,15 +28,16 @@ class SuratKeluarController extends Controller
     
     public function store(SuratRequest $request)
     {
-        dd($request->isi_surat);
         $data = $request->all();
         $data['nomor_surat'] = $this->nomorSurat('SM', $data['tanggal_masuk'], SuratKeluar::all());
 
         $nama_file = $data['nomor_surat'];
 
-        $data['surat'] = $request->file('surat')->storeAs(
-            'files/surat', $nama_file, 'public'
-        );
+        if ($data['buat-baru'] != 1) {
+            $data['surat'] = $request->file('surat')->storeAs(
+                'files/surat', $nama_file, 'public'
+            );
+        }
 
         SuratKeluar::create($data);
         return redirect()->back()->with('success', 'Data berhasil ditambahkan.');
@@ -43,7 +45,17 @@ class SuratKeluarController extends Controller
     
     public function show($id)
     {
-        //
+        $data = SuratKeluar::find($id);
+
+        $judul = $data->judul_surat . '.pdf';
+
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pages.pdf.surat', [
+            'judul' => $judul,
+            'isi' => $data['isi_surat'],
+        ]);
+        
+        return $pdf->stream($judul);
     }
     
     public function edit($id)

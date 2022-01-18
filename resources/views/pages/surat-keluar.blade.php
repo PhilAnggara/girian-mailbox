@@ -24,7 +24,7 @@
 @push('addon-style')
   <style>
     .tox-tinymce {
-      height: 1000px !important;
+      height: 500px !important;
     }
     .tox-statusbar__text-container {
       display: none !important;
