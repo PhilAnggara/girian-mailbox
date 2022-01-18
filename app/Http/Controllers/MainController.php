@@ -52,14 +52,6 @@ class MainController extends Controller
 
     public function buatSurat()
     {
-        // $bulan = Carbon::now()->isoFormat('MM');
-        // $tahun = Carbon::now()->isoFormat('YYYY');
-        // $data = NomorSurat::where('type', '0')->whereYear('created_at', $tahun)->whereMonth('created_at', $bulan)->get();
-        // if ($data->isEmpty()) {
-        //     dd('Kosong');
-        // } else {
-        //     dd('Ada');
-        // }
         return view('pages.buat-surat');
     }
     
@@ -126,18 +118,18 @@ class MainController extends Controller
         return $pdf->stream($judul);
     }
     
-    public function getOrder($type)
-    {
-        $bulan = Carbon::now()->isoFormat('MM');
-        $tahun = Carbon::now()->isoFormat('YYYY');
+    // public function getOrder($type)
+    // {
+    //     $bulan = Carbon::now()->isoFormat('MM');
+    //     $tahun = Carbon::now()->isoFormat('YYYY');
         
-        $data = NomorSurat::where('type', $type)->whereYear('created_at', $tahun)->whereMonth('created_at', $bulan)->get();
-        if ($data->isEmpty()) {
-            $order = 1;
-        } else {
-            $order = $data->last()->order + 1;
-        }
+    //     $data = NomorSurat::where('type', $type)->whereYear('created_at', $tahun)->whereMonth('created_at', $bulan)->get();
+    //     if ($data->isEmpty()) {
+    //         $order = 1;
+    //     } else {
+    //         $order = $data->last()->order + 1;
+    //     }
 
-        return $order;
-    }
+    //     return $order;
+    // }
 }

@@ -20,4 +20,9 @@ class SuratKeluar extends Model
     protected $hidden = [
 
     ];
+    
+    public function nomor()
+    {
+        return $this->belongsTo(NomorSurat::class, 'id_no', 'id');
+    }
 }

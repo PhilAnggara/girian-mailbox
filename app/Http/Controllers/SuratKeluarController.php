@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SuratRequest;
+use App\Models\NomorSurat;
 use App\Models\SuratKeluar;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -37,6 +39,16 @@ class SuratKeluarController extends Controller
             $data['surat'] = $request->file('surat')->storeAs(
                 'files/surat', $nama_file, 'public'
             );
+        } else {
+            $type = $data['kategori_surat'];
+            $order = $this->getOrder($type);
+            
+            $no = NomorSurat::create([
+                'type' => $type,
+                'order' => $order,
+            ]);
+
+            $data['id_no'] = $no->id;
         }
 
         SuratKeluar::create($data);
@@ -46,12 +58,15 @@ class SuratKeluarController extends Controller
     public function show($id)
     {
         $data = SuratKeluar::find($id);
+        $nomor = $this->showNomor($data->nomor);
 
         $judul = $data->judul_surat . '.pdf';
 
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pages.pdf.surat', [
             'judul' => $judul,
+            'data' => $data,
+            'nomor' => $nomor,
             'isi' => $data['isi_surat'],
         ]);
         

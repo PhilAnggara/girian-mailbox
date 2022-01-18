@@ -15,6 +15,7 @@ class CreateSuratKeluarTable extends Migration
     {
         Schema::create('surat_keluar', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_no')->nullable();
             $table->string('nomor_surat');
             $table->text('surat')->nullable();
             $table->longText('isi_surat')->nullable();

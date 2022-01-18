@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NomorSurat;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -36,6 +37,49 @@ class Controller extends BaseController
         $nomor_surat = $prefix. "-". $date. $kode;
 
         return $nomor_surat;
+    }
+
+    public function generateNomor($tipe)
+    {
+        $bulanR = $this->getRomawi(Carbon::now()->isoFormat('M'));
+        $bulan = Carbon::now()->isoFormat('MM');
+        $tahun = Carbon::now()->isoFormat('YYYY');
+        
+        $data = NomorSurat::where('type', $tipe)->whereYear('created_at', $tahun)->whereMonth('created_at', $bulan)->get();
+        if ($data->isEmpty()) {
+            $order = '001';
+        } else {
+            $order = Str::padLeft($data->last()->order+1, 3, 0);
+        }
+
+        $nomor_surat = $tipe . '.' . $order . '/KEC-GIRIAN/' . $bulanR . '/' . $tahun;
+
+        return $nomor_surat;
+    }
+
+    public function showNomor($nomor)
+    {
+        $bulan = $this->getRomawi(Carbon::parse($nomor->created_at)->isoFormat('M'));;
+        $tahun = Carbon::parse($nomor->created_at)->isoFormat('YYYY');
+
+        $nomor_surat = $nomor->type . '.' . Str::padLeft($nomor->order, 3, 0) . '/KEC-GIRIAN/' . $bulan . '/' . $tahun;
+
+        return $nomor_surat;
+    }
+    
+    public function getOrder($type)
+    {
+        $bulan = Carbon::now()->isoFormat('MM');
+        $tahun = Carbon::now()->isoFormat('YYYY');
+        
+        $data = NomorSurat::where('type', $type)->whereYear('created_at', $tahun)->whereMonth('created_at', $bulan)->get();
+        if ($data->isEmpty()) {
+            $order = 1;
+        } else {
+            $order = $data->last()->order + 1;
+        }
+
+        return $order;
     }
 
     public function getRomawi($bulan)

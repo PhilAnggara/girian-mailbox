@@ -76,13 +76,35 @@
           <input type="hidden" name="buat-baru" value="1">
 
           <div class="form-group">
-            <label for="isi_surat">Isi Surat</label>
-            <textarea name="isi_surat" id="isi_surat" rows="100"></textarea>
+            <label for="kategori_surat">Kategori Surat</label>
+            <select class="form-select form-select-sm" name="kategori_surat" id="kategori_surat" required>
+              <option value="" selected disabled>-- Pilih kategori surat --</option>
+              <option value="01">Surat Keputusan</option>
+              <option value="02">Surat Undangan</option>
+              <option value="03">Surat Permohonan</option>
+              <option value="04">Surat Pemberitahuan</option>
+              <option value="05">Surat Peminjaman</option>
+              <option value="06">Surat Pernyataan</option>
+              <option value="07">Surat Mandat</option>
+              <option value="08">Surat Tugas</option>
+              <option value="09">Surat Keterangan</option>
+              <option value="10">Surat Rekomendasi</option>
+              <option value="11">Surat Balasan</option>
+              <option value="12">Surat Perintah Perjalanan Dinas</option>
+              <option value="13">Sertifikat</option>
+              <option value="14">Perjanjian Kerja</option>
+              <option value="15">Surat Pengantar</option>
+            </select>
           </div>
 
           <div class="form-group">
             <label for="judul_surat">Judul Surat</label>
             <input type="text" class="form-control" name="judul_surat" id="judul_surat" placeholder="Judul Surat" required>
+          </div>
+
+          <div class="form-group">
+            <label for="isi_surat">Isi Surat</label>
+            <textarea name="isi_surat" id="isi_surat" rows="100"></textarea>
           </div>
           
           <div class="form-group">
