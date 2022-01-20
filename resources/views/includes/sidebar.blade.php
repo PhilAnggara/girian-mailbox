@@ -9,20 +9,20 @@
     <li class="nav-item {{ Request::is('surat-masuk') ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('surat-masuk.index') }}">
         <i class="far fa-inbox-in menu-icon"></i>
-        <span class="menu-title">Daftar Surat Masuk</span>
+        <span class="menu-title">Surat Masuk</span>
       </a>
     </li>
     <li class="nav-item {{ Request::is('surat-keluar') ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('surat-keluar.index') }}">
         <i class="far fa-paper-plane menu-icon"></i>
-        <span class="menu-title">Daftar Surat Keluar</span>
+        <span class="menu-title">Surat Keluar</span>
       </a>
     </li>
     @if (auth()->user()->jabatan == 'Admin')
       <li class="nav-item {{ Request::is('buat-surat') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('buat-surat') }}">
           <i class="far fa-envelope menu-icon"></i>
-          <span class="menu-title">Buat Surat</span>
+          <span class="menu-title">Template Surat</span>
         </a>
       </li>
     @endif
