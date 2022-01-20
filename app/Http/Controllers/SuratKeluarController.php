@@ -37,7 +37,7 @@ class SuratKeluarController extends Controller
 
         if ($data['buat-baru'] != 1) {
             $data['surat'] = $request->file('surat')->storeAs(
-                'files/surat', $nama_file, 'public'
+                'files/surat', $nama_file.'.pdf', 'public'
             );
         } else {
             $type = $data['kategori_surat'];

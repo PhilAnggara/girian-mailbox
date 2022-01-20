@@ -18,6 +18,8 @@
             @endforeach
           @endif
 
+          <input type="hidden" name="buat-baru" value="0">
+
           <div class="form-group">
             <label for="surat">Upload Surat</label>
             <input type="file" class="dropify" name="surat" id="surat" data-height="100" data-max-file-size="10M" data-allowed-file-extensions="pdf" required>

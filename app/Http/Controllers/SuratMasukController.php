@@ -33,7 +33,7 @@ class SuratMasukController extends Controller
         $nama_file = $data['nomor_surat'];
 
         $data['surat'] = $request->file('surat')->storeAs(
-            'files/surat', $nama_file, 'public'
+            'files/surat', $nama_file.'.pdf', 'public'
         );
 
         SuratMasuk::create($data);
