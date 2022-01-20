@@ -39,9 +39,11 @@ class SuratKeluarController extends Controller
             $data['surat'] = $request->file('surat')->storeAs(
                 'files/surat', $nama_file.'.pdf', 'public'
             );
+            $data['nomor'] = $this->getNomor($data['surat']);
         } else {
             $type = $data['kategori_surat'];
             $order = $this->getOrder($type);
+            $data['nomor'] = $this->generateNomor($type);
             
             $no = NomorSurat::create([
                 'type' => $type,
@@ -58,7 +60,7 @@ class SuratKeluarController extends Controller
     public function show($id)
     {
         $data = SuratKeluar::find($id);
-        $nomor = $this->showNomor($data->nomor);
+        $nomor = $this->showNomor($data->noSurat);
 
         $judul = $data->judul_surat . '.pdf';
 

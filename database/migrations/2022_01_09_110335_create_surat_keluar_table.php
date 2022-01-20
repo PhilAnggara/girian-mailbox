@@ -17,6 +17,7 @@ class CreateSuratKeluarTable extends Migration
             $table->id();
             $table->foreignId('id_no')->nullable();
             $table->string('nomor_surat');
+            $table->string('nomor')->nullable();
             $table->text('surat')->nullable();
             $table->longText('isi_surat')->nullable();
             $table->string('judul_surat');

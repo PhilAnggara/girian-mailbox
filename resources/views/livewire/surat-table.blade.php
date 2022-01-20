@@ -40,14 +40,14 @@
                     <a href="{{ route('surat-keluar.show', $item->id) }}" class="btn btn-inverse-danger btn-icon btn-sm me-2" target="_blank">
                       <i class="far fa-file-pdf"></i>
                     </a>
-                    <a href="{{ route('surat-keluar.show', $item->id) }}" class="text-secondary text-decoration-none" target="_blank"><b>{{ $item->nomor_surat }}</b></a>
+                    <a href="{{ route('surat-keluar.show', $item->id) }}" class="text-secondary text-decoration-none" target="_blank"><b>{{ $item->nomor }}</b></a>
                   </td>
                 @else
                   <td>
                     <a href="{{ Storage::url($item->surat) }}" class="btn btn-inverse-danger btn-icon btn-sm me-2" target="_blank">
                       <i class="far fa-file-pdf"></i>
                     </a>
-                    <a href="{{ Storage::url($item->surat) }}" class="text-secondary text-decoration-none" target="_blank"><b>{{ $item->nomor_surat }}</b></a>
+                    <a href="{{ Storage::url($item->surat) }}" class="text-secondary text-decoration-none" target="_blank"><b>{{ $item->nomor }}</b></a>
                   </td>
                 @endif
                 <td>{{ $item->judul_surat }}</td>

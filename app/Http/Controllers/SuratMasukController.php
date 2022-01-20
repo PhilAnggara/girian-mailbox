@@ -35,6 +35,7 @@ class SuratMasukController extends Controller
         $data['surat'] = $request->file('surat')->storeAs(
             'files/surat', $nama_file.'.pdf', 'public'
         );
+        $data['nomor'] = $this->getNomor($data['surat']);
 
         SuratMasuk::create($data);
         return redirect()->back()->with('success', 'Data berhasil ditambahkan.');

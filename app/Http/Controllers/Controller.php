@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NomorSurat;
 use Carbon\Carbon;
+use App\Models\NomorSurat;
 use Illuminate\Support\Str;
+use Smalot\PdfParser\Parser;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -122,5 +123,26 @@ class Controller extends BaseController
                 return 'XII';
                 break;
         }
+    }
+
+    public function getNomor($path)
+    {
+        $file = public_path('storage/'.$path);
+        $parser = new Parser();
+        $pdf = $parser->parseFile($file);
+        $text = $pdf->getText();
+        
+        if (Str::contains($text, 'Nomor :')) {     
+            $text = Str::after($text, 'Nomor : ');  
+        } elseif (Str::contains($text, 'No :')) {
+            $text = Str::after($text, 'No : ');
+        } else {
+            $text = '';
+        }
+
+        $text = Str::words($text, 1, '');
+        // $text = Str::substr($text, 0, -2);
+
+        return $text;
     }
 }

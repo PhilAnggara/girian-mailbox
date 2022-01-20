@@ -21,7 +21,7 @@ class SuratKeluar extends Model
 
     ];
     
-    public function nomor()
+    public function noSurat()
     {
         return $this->belongsTo(NomorSurat::class, 'id_no', 'id');
     }

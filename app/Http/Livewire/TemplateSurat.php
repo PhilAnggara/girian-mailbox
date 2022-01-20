@@ -30,17 +30,22 @@ class TemplateSurat extends Component
 
     public function updateNomor($jenis_surat)
     {
+        sleep(1);
         switch ($jenis_surat) {
             case 1:
                 $this->no_surat_a = $this->generateNomor('09');
+                $this->no_surat_b = $this->generateNomor('09');
                 break;
             case 2:
+                $this->no_surat_a = $this->generateNomor('09');
                 $this->no_surat_b = $this->generateNomor('09');
                 break;
             case 3:
                 $this->no_surat_c = $this->generateNomor('15');
+                $this->no_surat_d = $this->generateNomor('15');
                 break;
             case 4:
+                $this->no_surat_c = $this->generateNomor('15');
                 $this->no_surat_d = $this->generateNomor('15');
                 break;
             case 5:
