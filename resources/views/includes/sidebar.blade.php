@@ -32,7 +32,7 @@
         <span class="menu-title">Laporan</span>
       </a>
     </li> --}}
-    @if (auth()->user()->jabatan == 'Sekretaris Kecamatan')
+    @if (auth()->user()->jabatan == 'Sekretaris Kecamatan' || auth()->user()->jabatan == 'Camat')
       <li class="nav-item {{ Request::is('daftar-admin') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('daftar-admin.index') }}">
           <i class="far fa-user-plus menu-icon"></i>
